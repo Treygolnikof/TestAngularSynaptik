@@ -1,0 +1,13 @@
+<li *ngFor="let item of items">
+    <div class="list-item col-sm-5">
+        <label>Name:</label>
+        <p>{{item.name}}</p>
+        <label>Description:</label>
+        <p>{{item.description}}</p>
+        <label>Price:</label>
+        <p>${{item.price}}</p>
+        <label>Creating date</label>
+        <p>{{today | date:'short'}}</p>
+        <button class="btn btn-danger">Delete</button>
+    </div>
+</li>

@@ -1,0 +1,21 @@
+.list-item {
+    position: relative;
+    margin-top: 20px;
+    padding: 15px;
+    border: 1px solid #ddd;
+}
+
+.list-item ul {
+    list-style: none;
+}
+
+.list-item label {
+    font-weight: bold;
+    display: inline;
+}
+
+.list-item .btn {
+    position: absolute; 
+    right: 15px;
+    top: 15px;
+}

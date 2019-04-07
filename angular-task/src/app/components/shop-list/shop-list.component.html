@@ -1,0 +1,7 @@
+<div class="container-fluid">
+    <app-shop-add-form></app-shop-add-form>
+    <app-messages></app-messages>
+    <ul class="col-sm-6">
+        <app-shop-list-item *ngFor="let item of data" [item] = "item"></app-shop-list-item>
+    </ul>
+</div>

@@ -1,0 +1,31 @@
+<div class="add-form col-sm-6">
+    <form (submit)="addItem(name.value, description.value, price.value); name.value=''; description.value=''; price.value='';">
+        <div class="form-row align-items-center">
+            <div class="col-sm-3 my-1">
+                <label class="sr-only" for="inlineFormInputName">Name</label>
+                <input type="text" class="form-control" id="inlineFormInputName" placeholder="Name" #name>
+            </div>
+            <div class="col-sm-3 my-1">
+                <label class="sr-only" for="inlineFormInputName">Description</label>
+                <input type="text" class="form-control" id="inlineFormInputName" placeholder="Description" #description>
+            </div>
+            <div class="col-sm-3 my-1">
+                <label class="sr-only" for="inlineFormInputGroupUsername">Price</label>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">$</div>
+                    </div>
+                    <input type="text" class="form-control" id="inlineFormInputGroupUsername" placeholder="Price" #price>
+                </div>
+            </div>
+            <div class="col-auto my-1">
+                <button type="submit" class="btn btn-primary">Add</button>
+            </div>
+        </div>
+    </form>
+</div>
+<app-messages></app-messages>
+<ul>
+    <app-shop-list-item></app-shop-list-item>
+</ul>
+

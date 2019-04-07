@@ -1,0 +1,6 @@
+<div *ngIf="messageService.messages.length" class="col-sm-6">
+  <button class="btn btn-primary "
+  (click)="messageService.clear()">Clear</button>
+  <div class="alert" [ngClass]="{'alert-success': setStatus(message), 'alert-danger': !setStatus(message)}" role="alert" *ngFor='let message of messageService.messages'>{{message}}</div>
+</div>
+  

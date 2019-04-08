@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, DoCheck } from '@angular/core';
 import { MessageService } from '../../services/message.service';
 
 @Component({
@@ -6,15 +6,17 @@ import { MessageService } from '../../services/message.service';
   templateUrl: './messages.component.html',
   styleUrls: ['./messages.component.css']
 })
-export class MessagesComponent implements OnInit {
+export class MessagesComponent implements OnInit, DoCheck {
+
+  public messageStatus: boolean;
 
   constructor(public messageService: MessageService) { }
 
   ngOnInit() {
   }
 
-  setStatus(message: string) {
-    return message === 'Item successfully added' ? true : false;
+  ngDoCheck() {
+    this.messageStatus = this.messageService.messageStatus;
   }
 
 }

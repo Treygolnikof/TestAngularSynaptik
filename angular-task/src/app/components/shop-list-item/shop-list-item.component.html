@@ -1,13 +1,39 @@
-<li>
-    <div class="list-item">
-        <label>Name:</label>
-        <p>{{item.name}}</p>
-        <label>Description:</label>
-        <p>{{item.description}}</p>
-        <label>Price:</label>
-        <p>{{item.price | currency:'USD':'symbol-narrow'}}</p>
-        <label>Creating date</label>
-        <p>{{date | date:'short'}}</p>
-        <button class="btn btn-danger" (click)="deleteItem(item)">Delete</button>
-    </div>
-</li>
+<div class="list-item" *ngFor="let item of this.shopListService.visibleItems">
+    <label>Name:</label>
+    <p *ngIf="condition">{{item.name}}</p>
+    <input 
+        type="text" 
+        [(ngModel)]="item.name" 
+        *ngIf="!condition">
+    <label>Description:</label>
+    <p *ngIf="condition">{{item.description}}</p>
+    <input 
+        type="text" 
+        [(ngModel)]="item.description" 
+        *ngIf="!condition">
+    <label>Price:</label>
+    <p *ngIf="condition">{{item.price | currency:'USD':'symbol-narrow'}}</p>
+    <input 
+        type="number" 
+        [(ngModel)]="item.price" 
+        *ngIf="!condition">
+    <label>Creating date</label>
+    <p>{{date | date:'short'}}</p>
+    <button 
+        class="btn btn-success" 
+        (click)="toggle()" 
+        *ngIf="!condition">
+        Save
+    </button>
+    <button 
+        class="btn btn-primary" 
+        (click)="toggle()" 
+        *ngIf="condition">
+        Edit
+    </button>
+    <button 
+        class="btn btn-danger" 
+        (click)="deleteItem(item)">
+        Delete
+    </button>
+</div>

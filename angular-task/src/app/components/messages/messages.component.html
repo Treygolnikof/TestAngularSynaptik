@@ -1,6 +1,18 @@
-<div *ngIf="messageService.messages.length" class="col-sm-6">
-  <button class="btn btn-primary "
-  (click)="messageService.clear()">Clear</button>
-  <div class="alert" [ngClass]="{'alert-success': setStatus(message), 'alert-danger': !setStatus(message)}" role="alert" *ngFor='let message of messageService.messages'>{{message}}</div>
+<div class="row justify-content-end messages">
+  <button 
+    class="btn btn-primary col-md-2 align-middle"
+    (click)="messageService.clear()">
+    Clear
+  </button>
+  <div class="col-md-9">
+    <div class="scroll">
+      <div 
+        class="alert" 
+        [ngClass]="{'alert-success': messageStatus, 'alert-danger': !messageStatus}" 
+        role="alert" 
+        *ngFor='let message of messageService.messages'>
+        {{message}}
+      </div>
+    </div>
+  </div>
 </div>
-  

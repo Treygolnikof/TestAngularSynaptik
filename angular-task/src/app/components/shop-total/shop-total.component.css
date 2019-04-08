@@ -1,0 +1,9 @@
+.total-list {
+    padding: 15px;
+    border: 1px solid #ddd;
+}
+
+.total-list label {
+    font-weight: bold;
+    display: inline;
+}

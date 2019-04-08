@@ -1,3 +1,14 @@
-.btn {
+.messages {
     margin-bottom: 20px;
+}
+
+.btn {
+    height: 38px;
+}
+
+.scroll {
+    height: 50px;
+    background: #fff;
+    border: 1px solid #ddd;
+    overflow-y: scroll;
 }

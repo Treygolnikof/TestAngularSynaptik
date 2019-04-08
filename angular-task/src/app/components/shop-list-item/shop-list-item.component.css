@@ -1,21 +1,42 @@
 .list-item {
     position: relative;
-    margin-top: 20px;
+    display: inline-block;
     padding: 15px;
+    margin-right: 30px;
+    margin-bottom: 20px;
     border: 1px solid #ddd;
+    transition: .5s all;
+    width: 30%;
+    min-height: 320px;
 }
 
-.list-item ul {
-    list-style: none;
+.list-item:hover {
+    box-shadow: 0 0 5px rgba(0,0,0,0.4);
 }
 
 .list-item label {
     font-weight: bold;
-    display: inline;
+    width: 100%;
 }
 
-.list-item .btn {
+.list-item .btn-danger {
     position: absolute; 
     right: 15px;
     top: 15px;
+}
+
+.list-item .btn-primary {
+    position: absolute; 
+    right: 100px;
+    top: 15px;
+}
+
+.list-item .btn-success {
+    position: absolute; 
+    right: 100px;
+    top: 15px;
+}
+
+.list-item input {
+    margin-bottom: 10px;
 }

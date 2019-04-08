@@ -11,8 +11,7 @@ import { ShopListService } from '../../services/shop-list.service';
 export class ShopListItemComponent implements OnInit {
 
   date: number = Date.now();
-
-  @Input() item: Item[];
+  condition = true;
 
   constructor(private shopListService: ShopListService) { }
 
@@ -21,6 +20,10 @@ export class ShopListItemComponent implements OnInit {
 
   deleteItem(item) {
     this.shopListService.deleteItem(item);
+  }
+
+  toggle() {
+      this.condition = !this.condition;
   }
 
 }

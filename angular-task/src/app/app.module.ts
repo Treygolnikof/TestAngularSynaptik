@@ -6,6 +6,9 @@ import { ShopListComponent } from './components/shop-list/shop-list.component';
 import { ShopListItemComponent } from './components/shop-list-item/shop-list-item.component';
 import { MessagesComponent } from './components/messages/messages.component';
 import { ShopAddFormComponent } from './components/shop-add-form/shop-add-form.component';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { ShopTotalComponent } from './components/shop-total/shop-total.component';
+import { SearchPanelComponent } from './components/search-panel/search-panel.component';
 
 @NgModule({
   declarations: [
@@ -13,10 +16,14 @@ import { ShopAddFormComponent } from './components/shop-add-form/shop-add-form.c
     ShopListComponent,
     ShopListItemComponent,
     MessagesComponent,
-    ShopAddFormComponent
+    ShopAddFormComponent,
+    ShopTotalComponent,
+    SearchPanelComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

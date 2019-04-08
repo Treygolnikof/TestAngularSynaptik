@@ -1,24 +1,58 @@
-<div class="add-form col-md-6">
-  <div class="row">
-    <div class="col-md-3">
-        <label class="sr-only" for="inlineFormInputName">Name</label>
-        <input type="text" class="form-control" id="inlineFormInputName" placeholder="Name" required #name>
-    </div>
-    <div class="col-md-4">
-        <label class="sr-only" for="inlineFormInputName">Description</label>
-        <input type="text" class="form-control" id="inlineFormInputName" placeholder="Description" required #description>
-    </div>
-    <div class="col-md-3">
-        <label class="sr-only" for="inlineFormInputGroupUsername">Price</label>
-        <div class="input-group">
-            <div class="input-group-prepend">
-                <div class="input-group-text">$</div>
+<div class="add-form">
+    <form [formGroup]="addForm" (ngSubmit)="addItem()">
+        <div class="form-row">
+            <div class="col-md-3">
+                <label class="sr-only" for="inlineFormInputName">Name</label>
+                <input 
+                    type="text" 
+                    class="form-control" 
+                    id="inlineFormInputName" 
+                    placeholder="Name" 
+                    formControlName="name"
+                    [ngClass]="{'is-invalid': addForm.get('name').invalid && addForm.get('name').touched, 'is-valid': addForm.get('name').valid}">
+                <div 
+                    class="invalid-feedback"
+                    *ngIf="addForm.get('name').invalid && addForm.get('name').touched">
+                    "Name" can't be empty.
+                </div>
             </div>
-            <input type="text" class="form-control" id="inlineFormInputGroupUsername" placeholder="Price" required #price>
+            <div class="col-md-4">
+                <label class="sr-only" for="inlineFormInputName">Description</label>
+                <input 
+                    type="text" 
+                    class="form-control" 
+                    id="inlineFormInputName" 
+                    placeholder="Description" 
+                    formControlName="description">
+            </div>
+            <div class="col-md-3">
+                <label class="sr-only" for="inlineFormInputGroupUsername">Price</label>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">$</div>
+                    </div>
+                    <input 
+                        type="number" 
+                        class="form-control" 
+                        id="inlineFormInputGroupUsername" 
+                        placeholder="Price" 
+                        formControlName="price"
+                        [ngClass]="{'is-invalid': addForm.get('price').invalid && addForm.get('price').touched, 'is-valid': addForm.get('price').valid}">
+                    <div 
+                        class="invalid-feedback"
+                        *ngIf="addForm.get('price').invalid && addForm.get('price').touched">
+                        "Price" can't be empty.
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-1">
+                <button 
+                    type="submit" 
+                    class="btn btn-primary" 
+                    [disabled]="addForm.invalid">
+                    Add
+                </button>
+            </div>
         </div>
-    </div>
-    <div class="col-md-1">
-        <button type="submit" class="btn btn-primary" (click)="addItem(name.value, description.value, price.value); name.value=''; description.value=''; price.value='';">Add</button>
-    </div>
-  </div>
+    </form>
 </div>

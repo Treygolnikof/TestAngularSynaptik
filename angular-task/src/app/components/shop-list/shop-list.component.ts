@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 
-import { ShopListService } from '../../services/shop-list.service';
-
 @Component({
   selector: 'app-shop-list',
   templateUrl: './shop-list.component.html',
@@ -9,12 +7,9 @@ import { ShopListService } from '../../services/shop-list.service';
 })
 export class ShopListComponent implements OnInit {
 
-  data = [];
-
-  constructor(private shopListService: ShopListService) { }
+  constructor() { }
 
   ngOnInit() {
-    this.data = this.shopListService.data;
   }
 
 }
